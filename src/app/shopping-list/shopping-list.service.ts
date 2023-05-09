@@ -22,4 +22,9 @@ export class ShoppingListService {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.emit(this.ingredients.slice()); // emit a copy of the ingredients array
   }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients); // ... is the spread operator, it turns an array of elements into a list of elements
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
 }
